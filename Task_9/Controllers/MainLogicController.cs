@@ -19,7 +19,7 @@ namespace Task_9.Controllers
         {
             if (!semaphore.Wait(0))
             {
-                return BadRequest("Слишком много запросов");
+                return StatusCode(503, "Слишком много запросов на сервер!");
             }
 
             try
